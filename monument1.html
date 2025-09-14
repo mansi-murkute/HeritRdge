@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taj Mahal - HeritEdge</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Cinzel', serif; /* Elegant font */
+    background-color: #1a1a1a;
+    color: #d4af37;
+    overflow-x: hidden;
+  }
+
+  header {
+    background-color: #111;
+    padding: 15px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out;
+  }
+
+  .banner {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.2s ease-in-out;
+  }
+
+  .option-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    transition: 0.4s;
+    transform: translateY(0);
+  }
+
+  .option-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(212,175,55,0.6);
+  }
+
+  .option-card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .option-card img:hover {
+    transform: scale(1.05);
+  }
+
+  details {
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  details summary {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  details p {
+    margin-top: 15px;
+    line-height: 1.6;
+  }
+
+  .quiz {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+
+  .quiz h3 { 
+    margin-bottom: 15px; 
+    font-size: 22px;
+  }
+
+  .quiz button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .quiz button:hover { 
+    background-color: #b79428; 
+    transform: scale(1.05);
+  }
+
+  #result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .done-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 30px;
+    background-color: #d4af37;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+  .done-btn:hover { 
+    background-color: #b79428; 
+    transform: scale(1.05);
+  }
+
+  /* Floating objects */
+  .floating-circle {
+    position: absolute;
+    width: 12px;  /* smaller size */
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(212,175,55,0.25); /* translucent golden */
+    animation: float 10s infinite ease-in-out;
+  }
+
+  /* Different positions and delays */
+  .circle1 { top: 10%; left: 5%; animation-delay: 0s; }
+  .circle2 { top: 20%; left: 90%; animation-delay: 2s; }
+  .circle3 { top: 40%; left: 50%; animation-delay: 4s; }
+  .circle4 { top: 70%; left: 20%; animation-delay: 1s; }
+  .circle5 { top: 85%; left: 75%; animation-delay: 3s; }
+  .circle6 { top: 60%; left: 10%; animation-delay: 5s; }
+  .circle7 { top: 30%; left: 40%; animation-delay: 6s; }
+  .circle8 { top: 50%; left: 80%; animation-delay: 7s; }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes float {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-20px);}
+  }
+</style>
+</head>
+<body>
+
+<header>HeritEdge - Taj Mahal</header>
+
+<div class="banner">
+  <video autoplay muted loop width="1280">
+    <source src="taj1.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+
+
+<style>
+.taj-video {
+  width: 1280px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+
+<!-- Floating objects -->
+<div class="floating-circle circle1"></div>
+<div class="floating-circle circle2"></div>
+<div class="floating-circle circle3"></div>
+<div class="floating-circle circle4"></div>
+<div class="floating-circle circle5"></div>
+<div class="floating-circle circle6"></div>
+<div class="floating-circle circle7"></div>
+<div class="floating-circle circle8"></div>
+
+
+
+<!-- Options Section -->
+<div class="options">
+
+  <!-- 3D View Card -->
+  <div class="option-card">
+    <h2>3D View</h2>
+    <a href="https://drive.google.com/file/d/1fsbpin9Xk3hBlldHW_QHppweNHeLkZHe/view?usp=sharing" target="_blank">
+      <img src="3d.jpg" alt="View Taj Mahal in 3D">
+    </a>
+  </div>
+
+  <!-- AR View Card -->
+  <div class="option-card">
+    <h2>AR View</h2>
+    <a href="https://drive.google.com/file/d/19hvyc4KwsU6u6UESccUDwpCSSCFFlvoN/view?usp=drive_link" target="_blank">
+      <img src="tajmahalar.jpg" alt="View Taj Mahal in AR">
+    </a>
+  </div>
+
+</div> <!-- End of Options -->
+
+<!-- Floating objects -->
+<div class="floating-circle circle1"></div>
+<div class="floating-circle circle2"></div>
+<div class="floating-circle circle3"></div>
+<div class="floating-circle circle4"></div>
+<div class="floating-circle circle5"></div>
+<div class="floating-circle circle6"></div>
+<div class="floating-circle circle7"></div>
+<div class="floating-circle circle8"></div>
+
+
+
+<!-- Audio Experience -->
+<div class="audio-section" style="text-align:center; margin:40px auto;">
+  <h2 style="color:#d4af37; font-size:24px; margin-bottom:15px;">
+    🎶 Immerse Yourself in the Experience
+  </h2>
+  <audio controls style="width:70%; max-width:400px; border-radius:8px; outline:none;">
+    <source src="sample1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <p style="font-size:16px; margin-top:10px; color:#ccc;">
+    Play the background music while exploring the Taj Mahal.
+  </p>
+</div>
+
+
+<!-- More Info Section -->
+<details>
+  <summary>Want to know more?</summary>
+  <p>
+    The Taj Mahal, located in Agra, India, was commissioned in 1632 by the Mughal emperor Shah Jahan 
+    to house the tomb of his beloved wife Mumtaz Mahal. An ivory-white marble mausoleum, 
+    it is recognized as one of the greatest architectural achievements in history and a UNESCO World Heritage Site.
+Story of the Taj Mahal
+
+Long ago, in the 1600s, the Mughal Empire ruled much of India. Its emperor, Shah Jahan, was known for his wealth, his power, and his love for beauty. But above all, he was known for his love for one woman — Mumtaz Mahal. She wasn’t just his queen, she was his companion, his confidante, the one who stayed by his side through battles and journeys.
+
+Then came tragedy. In 1631, while giving birth to their 14th child, Mumtaz Mahal died. For Shah Jahan, the world fell apart. The man who commanded armies and built cities found himself helpless in grief. But instead of letting her memory fade, he decided her resting place would be unlike anything the world had ever seen.
+
+And so, the Taj Mahal was born.
+
+It wasn’t built overnight. For more than 20 years, thousands of workers toiled day and night. White marble was hauled from faraway Rajasthan, precious stones came from Persia, China, and the Middle East. Architects, calligraphers, and craftsmen from across Asia worked together. Slowly, stone by stone, dome by dome, the vision began to rise on the banks of the Yamuna River.
+
+The result was a wonder. The central dome soared like a pearl in the sky, flanked by graceful minarets. Inside, verses from the Quran were carved into the marble, while delicate floral patterns were inlaid with gemstones. Even the gardens around it were designed to symbolize paradise, with water channels reflecting the tomb.
+
+But the story didn’t end there.
+
+Years later, Shah Jahan himself fell ill. His son Aurangzeb took power and, fearing his father’s influence, imprisoned him in the Agra Fort. From his window, Shah Jahan could see the Taj Mahal in the distance — the resting place of his beloved. They say he spent his final years gazing at it, until he too passed away. His body was laid to rest beside Mumtaz, inside the very monument he had built for her.
+
+And so, the Taj Mahal became more than just stone and marble. It became a story — of love, of loss, of a man who built a dream to keep his queen’s memory alive forever. Even today, when people stand before its glowing walls, they don’t just see a monument. They feel the echo of that story, as if the past is still alive in its silence.
+  </p>
+</details>
+
+
+
+<!-- Quiz Section -->
+<div class="quiz">
+  <h3>Quiz: Test Your Knowledge!</h3>
+  <form id="quizForm">
+    <p>1. Who commissioned the Taj Mahal?</p>
+    <input type="radio" name="q1" value="wrong"> Akbar<br>
+    <input type="radio" name="q1" value="correct"> Shah Jahan<br>
+    <input type="radio" name="q1" value="wrong"> Aurangzeb<br><br>
+
+    <p>2. Where is the Taj Mahal located?</p>
+    <input type="radio" name="q2" value="wrong"> Delhi<br>
+    <input type="radio" name="q2" value="correct"> Agra<br>
+    <input type="radio" name="q2" value="wrong"> Jaipur<br><br>
+
+    <p>3. In which year was construction of the Taj Mahal started?</p>
+    <input type="radio" name="q3" value="wrong"> 1600<br>
+    <input type="radio" name="q3" value="correct"> 1632<br>
+    <input type="radio" name="q3" value="wrong"> 1650<br><br>
+
+    <p>4. How many years did it take to complete the Taj Mahal?</p>
+    <input type="radio" name="q4" value="wrong"> 10<br>
+    <input type="radio" name="q4" value="wrong"> 15<br>
+    <input type="radio" name="q4" value="correct"> 22<br><br>
+
+    <p>5. What is the main material used in Taj Mahal?</p>
+    <input type="radio" name="q5" value="correct"> White Marble<br>
+    <input type="radio" name="q5" value="wrong"> Sandstone<br>
+    <input type="radio" name="q5" value="wrong"> Granite<br><br>
+
+    <p>6. Who is buried inside the Taj Mahal?</p>
+    <input type="radio" name="q6" value="wrong"> Only Mumtaz Mahal<br>
+    <input type="radio" name="q6" value="correct"> Mumtaz Mahal and Shah Jahan<br>
+    <input type="radio" name="q6" value="wrong"> Only Shah Jahan<br><br>
+
+    <p>7. Which river flows beside the Taj Mahal?</p>
+    <input type="radio" name="q7" value="wrong"> Ganges<br>
+    <input type="radio" name="q7" value="correct"> Yamuna<br>
+    <input type="radio" name="q7" value="wrong"> Saraswati<br><br>
+
+    <p>8. The Taj Mahal is a UNESCO World Heritage Site since?</p>
+    <input type="radio" name="q8" value="wrong"> 1975<br>
+    <input type="radio" name="q8" value="correct"> 1983<br>
+    <input type="radio" name="q8" value="wrong"> 1990<br><br>
+
+    <p>9. What is the style of architecture of Taj Mahal?</p>
+    <input type="radio" name="q9" value="correct"> Mughal Architecture<br>
+    <input type="radio" name="q9" value="wrong"> Dravidian Architecture<br>
+    <input type="radio" name="q9" value="wrong"> Gothic Architecture<br><br>
+
+    <p>10. How many workers were said to be involved in its construction?</p>
+    <input type="radio" name="q10" value="wrong"> 5,000<br>
+    <input type="radio" name="q10" value="wrong"> 10,000<br>
+    <input type="radio" name="q10" value="correct"> 20,000<br><br>
+
+    <p>11. What precious stones were inlaid in the Taj Mahal?</p>
+    <input type="radio" name="q11" value="correct"> Semi-precious stones<br>
+    <input type="radio" name="q11" value="wrong"> Diamonds<br>
+    <input type="radio" name="q11" value="wrong"> Rubies only<br><br>
+
+    <p>12. What color does the Taj Mahal appear during sunrise?</p>
+    <input type="radio" name="q12" value="correct"> Pinkish<br>
+    <input type="radio" name="q12" value="wrong"> Green<br>
+    <input type="radio" name="q12" value="wrong"> Blue<br><br>
+
+    <p>13. What inscription is found on the entrance gate of Taj Mahal?</p>
+    <input type="radio" name="q13" value="correct"> Verses from the Quran<br>
+    <input type="radio" name="q13" value="wrong"> Sanskrit Mantras<br>
+    <input type="radio" name="q13" value="wrong"> Persian Poems<br><br>
+
+    <p>14. What does Taj Mahal mean?</p>
+    <input type="radio" name="q14" value="wrong"> Palace of Kings<br>
+    <input type="radio" name="q14" value="correct"> Crown of Palaces<br>
+    <input type="radio" name="q14" value="wrong"> Throne of Love<br><br>
+
+    <p>15. What was Mumtaz Mahal’s real name?</p>
+    <input type="radio" name="q15" value="wrong"> Nur Jahan<br>
+    <input type="radio" name="q15" value="wrong"> Jahanara Begum<br>
+    <input type="radio" name="q15" value="correct"> Arjumand Banu Begum<br><br>
+
+    <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+  </form>
+  <div id="result"></div>
+</div>
+
+<!-- Done Button -->
+<button class="done-btn" onclick="window.location.href='congrats-taj.html'">Done</button>
+
+<script>
+function checkQuiz(){
+  let score = 0;
+  const total = 15;
+  for(let i=1;i<=total;i++){
+    const ans = document.querySelector('input[name="q'+i+'"]:checked');
+    if(ans && ans.value === "correct") score++;
+  }
+  document.getElementById("result").innerText = "You scored " + score + "/" + total + "!";
+}
+</script>
+
+
+</body>
+</html>
